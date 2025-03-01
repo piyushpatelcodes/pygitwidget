@@ -17,6 +17,13 @@
   },
   "build": {
     "appId": "com.pygit.widget",
+    "publish": {
+      "provider": "github",
+      "owner": "piyushpatelcodes",
+      "repo": "pygitwidget",
+      "token": "${GH_TOKEN}",
+      "releaseType": "release"
+    },
     "win": {
       "target": "nsis"
     },
@@ -27,13 +34,8 @@
     ]
     }
   },
-  "publish": {
-  "provider": "github",
-  "owner": "piyushpatelcodes",
-  "repo": "pygitwidget",
-  "token": "${GH_TOKEN}"
-}
-,
+ 
+
   "keywords": [],
   "author": "piyushpatelcodes",
   "license": "ISC",
