@@ -21,7 +21,11 @@
       "provider": "github",
       "owner": "piyushpatelcodes",
       "repo": "pygitwidget",
-      "token": "Z2hwX2F6c2hBTXdleVNuWHRTUUI2YXFGNnlnSm43OU1sczBXOVBwYg==",
+      "extraMetadata": {
+      "env": {
+        "GH_TOKEN": "${GH_TOKEN}"  
+      }
+    },
       "releaseType": "release"
     },
     "win": {

@@ -1,6 +1,6 @@
 
   
-const token = "Z2hwX2F6c2hBTXdleVNuWHRTUUI2YXFGNnlnSm43OU1sczBXOVBwYg==";
+const token = require('electron').remote.app.getVersion();
 
 async function fetchGitHub(username) {
   const finalUsername = username || "piyushpatelcodes";
