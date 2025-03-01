@@ -30,7 +30,8 @@
   "publish": {
   "provider": "github",
   "owner": "piyushpatelcodes",
-  "repo": "pygitwidget"
+  "repo": "pygitwidget",
+  "token": "${GH_TOKEN}"
 }
 ,
   "keywords": [],
