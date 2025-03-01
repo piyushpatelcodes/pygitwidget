@@ -1,6 +1,6 @@
 
   
-const token = "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";
+const token = "Z2hwX2F6c2hBTXdleVNuWHRTUUI2YXFGNnlnSm43OU1sczBXOVBwYg==";
 
 async function fetchGitHub(username) {
   const finalUsername = username || "piyushpatelcodes";
