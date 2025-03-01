@@ -21,7 +21,9 @@
       "repo": "pygitwidget",
        "releaseType": "release"
        
-    },
+    },"extraMetadata": {
+    "GH_TOKEN": "${GH_TOKEN}"
+  },
     "win": {
       "target": "nsis"
     },
