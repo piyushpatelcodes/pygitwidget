@@ -12,7 +12,7 @@ jobs:
       matrix:
         os: [ windows-latest, macos-latest]
     env:
-      GH_TOKEN: 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
+      GH_TOKEN: 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
 
 
     steps:
@@ -38,7 +38,7 @@ jobs:
       - name: Publish to GitHub Releases 🚀
         if: startsWith(github.ref, 'refs/tags/')
         env:
-          GH_TOKEN: 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
+          GH_TOKEN: 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
         run: npm run release
         working-directory: ./app
 
