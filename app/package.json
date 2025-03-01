@@ -18,16 +18,13 @@
   "build": {
     "appId": "com.pygit.widget",
     "publish": {
+      "provider" : "github",
      "owner": "piyushpatelcodes",
     "repo": "pygitwidget",
     "vPrefixedTagName": false,
     "releaseType": "release",
-    "token": "${GH_TOKEN}",
-    "extraMetadata": {
-      "env": {
-        "GH_TOKEN": "${GH_TOKEN}"  
-      }
-    }
+    "token": "${GH_TOKEN}"
+    
    },
      
     "win": {
