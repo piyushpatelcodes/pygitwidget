@@ -11,6 +11,9 @@ jobs:
     strategy:
       matrix:
         os: [ windows-latest, macos-latest]
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
 
     steps:
       - name: Checkout Code
