@@ -18,16 +18,19 @@
   "build": {
     "appId": "com.pygit.widget",
     "publish": {
-      "provider": "github",
-      "owner": "piyushpatelcodes",
-      "repo": "pygitwidget",
-      "extraMetadata": {
+    "provider": "github",
+    "owner": "piyushpatelcodes",
+    "repo": "pygitwidget",
+    "vPrefixedTagName": false,
+    "releaseType": "release",
+    "token": "${GH_TOKEN}",
+    "extraMetadata": {
       "env": {
         "GH_TOKEN": "${GH_TOKEN}"  
       }
-    },
-      "releaseType": "release"
-    },
+    }
+   },
+     
     "win": {
       "target": "nsis"
     },
