@@ -16,7 +16,7 @@
     "release": "npm run publish"
   },
   "build": {
-    "appId": "com.vibex.widget",
+    "appId": "com.pygit.widget",
     "win": {
       "target": "nsis"
     },
