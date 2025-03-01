@@ -13,6 +13,7 @@ permissions:
 jobs:
   build:
     runs-on: ${{ matrix.os }}
+    environment: GH_TOKEN
     strategy:
       matrix:
         os: [windows-latest, macos-latest]
