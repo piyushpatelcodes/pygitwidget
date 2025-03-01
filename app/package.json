@@ -23,7 +23,9 @@
     "repo": "pygitwidget",
     "vPrefixedTagName": false,
     "releaseType": "release",
-    "token": "${GH_TOKEN}"
+     "requestHeaders": {
+    "Authorization": "Bearer ${GH_TOKEN}"
+  }
     
    },
      
