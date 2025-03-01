@@ -3,51 +3,51 @@ name: Build and Release VibeSenseWidget
 on:
   push:
     tags:
-      - v*  # Only triggers on version tags like v1.0.0
+      - v*
+
+permissions:
+  contents: write
+  packages: write
+  actions: read
 
 jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ windows-latest, macos-latest]
+        os: [windows-latest, macos-latest]
+
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      
-
 
     steps:
-      - name: Checkout Code
+      - name: Checkout Code ✅
         uses: actions/checkout@v3
 
-      - name: Install Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
-
-   
-
 
       - name: Install Dependencies 🔥
         run: npm install
         working-directory: ./app
 
-      - name: Build App 🛠️
+      - name: Build App 🚀
         run: npm run build
         working-directory: ./app
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Publish to GitHub Releases 🚀
+      - name: Publish Release 🌐
         if: startsWith(github.ref, 'refs/tags/')
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npm run release
         working-directory: ./app
 
-      - name: Upload Artifact
+      - name: Upload Artifact 📦
         uses: actions/upload-artifact@v4
-
         with:
           name: VibeSenseWidget-${{ runner.os }}
-          path: app/dist/ # Adjust path if needed
+          path: app/dist/
