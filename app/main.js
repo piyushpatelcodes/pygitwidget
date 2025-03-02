@@ -1,7 +1,14 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 const dotenv = require("dotenv");
-
-dotenv.config();
+const path = require('path');
+const dotenvExpand = require("dotenv-expand");
+if (process.resourcesPath) {
+  dotenvExpand.expand(dotenv.config({ path: path.join(process.resourcesPath, ".env") }));
+} else {
+  dotenvExpand.expand(dotenv.config());
+}
+ 
+// dotenv.config();
 
  
 let mainWindow;
@@ -24,8 +31,8 @@ vibexAutoLauncher.isEnabled().then((isEnabled) => {
 
 app.whenReady().then(() => {
   mainWindow = new BrowserWindow({
-    width: 300,
-    height: 550,
+    width: 259,
+    height: 500,
     transparent: true,
     alwaysOnTop: true,
     frame: false,
@@ -42,7 +49,7 @@ app.whenReady().then(() => {
 
   mainWindow.loadFile("index.html");
   mainWindow.setIgnoreMouseEvents(false, { forward: true });
-});
+ });
 
 ipcMain.on("drag-window", () => {
   const bounds = mainWindow.getBounds();

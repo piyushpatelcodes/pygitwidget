@@ -1,5 +1,6 @@
 require("dotenv").config(); 
 const token = process.env.GH_TOKEN
+console.log("token gh: " , token)
 
 
 async function fetchGitHub(username) {
