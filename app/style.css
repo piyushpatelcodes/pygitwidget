@@ -95,7 +95,7 @@
     border-radius: 50%;
     transition: 0.3s;
     cursor: pointer;
-  }
+   }
   
   .graph-dot:hover {
     transform: scale(1.4);

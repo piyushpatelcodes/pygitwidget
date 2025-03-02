@@ -1,6 +1,9 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
+const dotenv = require("dotenv");
 
+dotenv.config();
 
+ 
 let mainWindow;
 const AutoLaunch = require("electron-auto-launch");
 
@@ -21,8 +24,8 @@ vibexAutoLauncher.isEnabled().then((isEnabled) => {
 
 app.whenReady().then(() => {
   mainWindow = new BrowserWindow({
-    width: 400,
-    height: 450,
+    width: 300,
+    height: 550,
     transparent: true,
     alwaysOnTop: true,
     frame: false,
@@ -32,13 +35,13 @@ app.whenReady().then(() => {
     skipTaskbar: true, // Hide from Taskbar
     webPreferences: {
       nodeIntegration: true,
-      preload: __dirname + "/preload.js",
+      contextIsolation:false,
+      preload:  "/preload.js",
     },
   });
 
   mainWindow.loadFile("index.html");
   mainWindow.setIgnoreMouseEvents(false, { forward: true });
-  mainWindow.webContents.openDevTools();
 });
 
 ipcMain.on("drag-window", () => {

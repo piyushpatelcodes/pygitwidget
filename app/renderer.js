@@ -1,6 +1,6 @@
+require("dotenv").config(); 
+const token = process.env.GH_TOKEN
 
-  
-const token = require('electron').remote.app.getVersion();
 
 async function fetchGitHub(username) {
   const finalUsername = username || "piyushpatelcodes";
@@ -51,9 +51,9 @@ const graphContainer = document.getElementById("github-graph");
         dot.setAttribute("data-count", c.count);
         dot.onmouseover = (e) => {
           const tooltip = document.getElementById("tooltip");
-          tooltip.innerHTML = `${c.date} - ${c.count} contributions`;
-          tooltip.style.top = `${e.clientY - 40}px`;
-          tooltip.style.left = `${e.clientX}px`;
+          tooltip.innerHTML = `${c.date} <br> ${c.count} contributions`;
+          tooltip.style.top = `${e.clientY - 80}px`;
+          tooltip.style.left = `${e.clientX - 80}px`;
           tooltip.classList.add("visible");
         };
         dot.onmouseleave = () => {

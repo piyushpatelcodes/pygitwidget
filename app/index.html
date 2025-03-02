@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="macos-ui widget" onmouseover="showBoundary()">
+    <div class="macos-ui widget" >
       <div class="inputclass">
         <div class="group">
           <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
@@ -99,7 +99,7 @@
               <span id="followers" class="big-text">2626</span>
               <span class="regular-text">Followers</span>
             </div>
-            <div class="item">
+            <div class="item" onmouseover="showBoundary()">
               <svg
                 style="
                   :hover {
@@ -156,11 +156,10 @@
           elements[i].style.opacity = "1"; // Use .style to modify CSS properties
         }
 
-        // Automatically remove boundary after 3 seconds
         clearTimeout(timeout);
         timeout = setTimeout(() => {
           hideBoundary();
-        }, 11000);
+        }, 8000);
       }
 
       function hideBoundary() {
